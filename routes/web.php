@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 
 Route::prefix("/hotel")->name("hotel.")->controller(HotelController::class)->group(function (){
-    Route::get("/" ,"create");
-    Route::post("/" ,"store");
+    Route::get("/" ,"index")->name('index');
+    Route::get("/create" ,"create")->name('create');
+    Route::post("/create" ,"store");
 });
