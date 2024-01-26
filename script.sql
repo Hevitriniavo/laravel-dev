@@ -43,3 +43,10 @@ CREATE TABLE client (
     url VARCHAR(255),
     PRIMARY KEY (client_id)
 );
+
+
+composer require --dev --with-all-dependencies barryvdh/laravel-ide-helper:^2.13.0
+php artisan ide-helper:generate
+composer require barryvdh/laravel-debugbar --dev
+php artisan ide-helper:models -M
+php artisan ide-helper:meta

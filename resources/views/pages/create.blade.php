@@ -16,7 +16,7 @@
                 <x-input :colSize="4" name="state" label="état" type="text" />
                 <x-input :colSize="4" name="country" label="Pays" type="text" />
             </div>
-            <x-input :colSize="12" name="address" label="Adrresse d'hotel" type="text" />
+            <x-input :colSize="12" name="address" label="Adrresse d'hotel" type="textarea" />
 
             <div class="row">
                 <x-input :colSize="6" name="phone_number" label="Numero de télèphone" type="text" />
