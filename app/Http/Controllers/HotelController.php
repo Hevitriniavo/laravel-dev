@@ -20,14 +20,16 @@ class HotelController extends Controller
     public function create(): View
     {
 
-        return view("pages.create", [
+        return view("pages.form", [
             'hotel' => new Hotel()
         ]);
     }
 
-    public function update(Hotel $hotel): View
+    public function update(Hotel $hotel, HotelRequest $request): View
     {
-        return view("pages.update");
+        return view("pages.form", [
+            'hotel' => $hotel
+        ]);
     }
 
     public function store(HotelRequest $request):RedirectResponse | View

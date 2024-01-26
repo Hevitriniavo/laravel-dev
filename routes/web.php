@@ -23,5 +23,5 @@ Route::prefix("/hotel")->name("hotel.")->controller(HotelController::class)->gro
     Route::get("/" ,"index")->name('index');
     Route::get("/create" ,"create")->name('create');
     Route::put("/update/{hotel}" ,"update")->name('update');
-    Route::post("/create" ,"store");
+    Route::post("/create" ,"store")->name("store");
 });

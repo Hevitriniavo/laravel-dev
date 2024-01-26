@@ -4,10 +4,10 @@
 
 @section('content')
     <div class="container m-5 bg-transparent">
-        <h1 class="text-center w-75 mb-5">Ajouter Hotel</h1>
-        <form  action="{{route($hotel->exists ? "hotel.update": "hotel.store", $hotel)}}" method="POST" class="w-75 vstack" enctype="multipart/form-data">
+        <h1 class="text-center w-75 mb-5">{{ $hotel->exists ? "Modifier" : "Ajouter" }} Hôtel</h1>
+        <form  action="{{ route($hotel->exists ? 'hotel.update' : 'hotel.store', $hotel) }}" method="POST" class="w-75 vstack" enctype="multipart/form-data">
             @csrf
-            @method($hotel->exists ? 'PUT': 'POST')
+            @method($hotel->exists ? 'PUT' : 'POST')
 
             <div class="row">
                 <x-input :colSize="6" name="name" label="Nom d'hôtel" type="text" :value="$hotel->name" />
@@ -26,13 +26,7 @@
             </div>
             <x-input :colSize="12" name="url" label="Image" type="file" />
 
-        @if($hotel->exists)
-                <x-button type="submit" color="primary" label="Modifier" />
-            @else
-                <x-button type="submit" color="primary" label="Créer" />
-            @endif
-
+            <x-button type="submit" color="primary" label="{{ $hotel->exists ? 'Modifier' : 'Créer' }}" />
         </form>
     </div>
-
 @endsection
