@@ -22,7 +22,7 @@ class HotelRequest extends FormRequest
     public function rules(): array
     {
         return[
-            'name' => 'required|string|min:10',
+            'name' => 'required|string',
             'address' => 'required|string',
             'city' => 'required|string',
             'state' => 'required|string',

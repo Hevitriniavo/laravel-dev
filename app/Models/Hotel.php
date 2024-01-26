@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * @mixin IdeHelperHotel
+ * @method static create(mixed $data)
  */
 class Hotel extends Model
 {
@@ -23,4 +25,9 @@ class Hotel extends Model
         'email',
         'url'
     ];
+
+
+    public function imageUrl(): string {
+        return Storage::disk("public")->url($this->url);
+    }
 }
