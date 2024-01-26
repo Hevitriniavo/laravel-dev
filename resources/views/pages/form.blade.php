@@ -24,7 +24,7 @@
                 <x-input :colSize="6" name="phone_number" label="Numéro de téléphone" type="text" :value="$hotel->phone_number" />
                 <x-input :colSize="6" name="postal_code" label="Code postal" type="text" :value="$hotel->postal_code" />
             </div>
-            <x-input :colSize="12" name="url" label="Image" type="file" />
+            <x-input :colSize="12" name="url" label="Image" type="file" :currentValue="$hotel->url" />
 
             <x-button type="submit" color="primary" label="{{ $hotel->exists ? 'Modifier' : 'Créer' }}" />
         </form>

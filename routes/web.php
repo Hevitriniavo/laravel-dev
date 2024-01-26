@@ -21,7 +21,10 @@ Route::get('/', function () {
 
 Route::prefix("/hotel")->name("hotel.")->controller(HotelController::class)->group(function (){
     Route::get("/" ,"index")->name('index');
+
     Route::get("/create" ,"create")->name('create');
-    Route::put("/update/{hotel}" ,"update")->name('update');
     Route::post("/create" ,"store")->name("store");
+
+    Route::get("/update/{hotel}" ,"edit")->name('edit');
+    Route::put("/update/{hotel}" ,"update")->name('update');
 });

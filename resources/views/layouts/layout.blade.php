@@ -30,7 +30,7 @@
         </div>
     </div>
 </nav>
- <div class="container">
+ <div class="m-2">
      @yield('content')
  </div>
 
