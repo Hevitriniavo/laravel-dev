@@ -19,12 +19,10 @@ Route::get('/', function () {
 });
 
 
-Route::prefix("/hotel")->name("hotel.")->controller(HotelController::class)->group(function (){
-    Route::get("/" ,"index")->name('index');
-
-    Route::get("/create" ,"create")->name('create');
-    Route::post("/create" ,"store")->name("store");
-
-    Route::get("/update/{hotel}" ,"edit")->name('edit');
-    Route::put("/update/{hotel}" ,"update")->name('update');
+Route::prefix("/hotel")->group(function () {
+    Route::get("/", [HotelController::class, "index"])->name('hotel.index');
+    Route::get("/create", [HotelController::class, "create"])->name('hotel.create');
+    Route::post("/create", [HotelController::class, "store"])->name("hotel.store");
+    Route::get("/update/{hotel}", [HotelController::class, "edit"])->name('hotel.edit');
+    Route::put("/update/{hotel}", [HotelController::class, "update"])->name('hotel.update');
 });
