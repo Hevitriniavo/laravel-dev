@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\HotelRequest;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class HotelController extends Controller
@@ -14,9 +14,11 @@ class HotelController extends Controller
     }
 
     public function create():View {
+
         return view("pages.create");
     }
-    public function store():RedirectResponse | View {
+    public function store(HotelRequest $request):RedirectResponse | View {
+        dd($request->validated());
         return view("pages.index");
     }
 }
